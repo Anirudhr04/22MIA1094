@@ -1,11 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-const schedulerRoutes = require("./routes/schedulerRoutes");
 const app = express();
-app.use(express.json());
-app.use("/api", schedulerRoutes);
+const schedulerRoutes = require("./routes/schedulerRoutes");
 app.use(cors());
 app.use(express.json());
+app.use("/api", schedulerRoutes);
 
 app.get("/", (req, res) => {
 
